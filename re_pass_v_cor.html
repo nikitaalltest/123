@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/re_pass_v_cor.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="pre__header">
+            <div>
+                <img src="img/logof1.png" alt="">
+                <p>Сервис подбора доставки</p>
+            </div>
+        </div>
+    </div>
+    <form action="">
+        <h1>Введите код</h1>
+        <p>Код отправлен на почту example1@mail.ru.
+            Если не пришло письмо, проверьте «спам»</p>
+        <div class="pincode">
+            <input type="number" required>
+            <input type="number" required>
+            <input type="number" required>
+            <input type="number" required>
+            <input type="hidden" name="pincode">
+        </div>
+        <div>
+            <button>Войти</button>
+        </div>
+        <div>
+            <a href="#">Назад</a>
+        </div>
+         
+        <script src="/jquery.min.js"></script>
+         
+        <script>
+        $('input').keydown(function(e){
+            $(this).val('');
+        });
+         
+        $('input').keyup(function(e){
+            var $wrap = $(this).closest('.pincode');
+            var $inputs = $wrap.find('input[type="number"]');	
+            var val = $(this).val();
+            
+            // Ввод только цифр
+            if(val == val.replace(/[0-9]/, '')) {
+                $(this).val('');
+                return false;
+            }
+            
+            // Передача фокуса следующему innput
+            $inputs.eq($inputs.index(this) + 1).focus();
+         
+            // Заполнение input hidden
+            var fullval = '';
+            $inputs.each(function(){
+                fullval = fullval + (parseInt($(this).val()) || '0');
+            });
+            $wrap.find('input[type="hidden"]').val(fullval);
+        });
+        </script>
+    </form>
+</body>
+</html>
