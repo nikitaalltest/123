@@ -1,0 +1,360 @@
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+*,*:before,*:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+
+nav,footer,header,aside{display: block;}
+
+html,body{
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+input,button,textarea{font-family:inherit;}
+
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+/*--------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: local('Helvetica Neue Thin'), local('Helvetica-Neue-Thin'),
+        url('../fonts/HelveticaNeueCyr-Thin.woff2') format('woff2'),
+        url('../fonts/HelveticaNeueCyr-Thin.woff') format('woff'),
+        url('../fonts/HelveticaNeueCyr-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+
+header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 55px;
+    position: relative;
+    background: #FDFDFD;
+    -webkit-box-shadow: 1px 9px 14px 4px rgba(0,0,0,0.1); 
+    box-shadow: 1px 4px 14px 0px rgba(0,0,0,0.1);
+}
+
+header button{
+    background: none;
+    position: absolute;
+    left: 28.16px;
+}
+
+.order{
+    margin: 25px 15px;
+}
+
+.order h1{
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    /* identical to box height */
+
+
+    color: #000000;
+}
+
+header .user{
+    position: absolute;
+    right: 15px;
+    background: url(../img/Vector.png) no-repeat, #F1F1F1;
+    background-position: center;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+
+.order .ord__inp{
+    display: flex;
+    flex-direction: column;
+}
+
+.order .ord__inp div{
+    display: flex;
+    flex-direction: column;
+}
+
+.order .ord__inp input{
+    width: 345px;
+    height: 50px;
+    background: #F9F9F9;
+    border-radius: 3px;
+    margin-top: 5px;
+    padding: 16px 20px;
+
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 125%;
+    /* identical to box height, or 17px */
+
+    letter-spacing: 0.01em;
+
+    color: #000000;
+}
+
+.order .ord__inp input::placeholder{
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 125%;
+    /* identical to box height, or 17px */
+
+    letter-spacing: 0.01em;
+
+    color: #7D7D7D;
+}
+
+.radio__div label{
+    width: 150px;
+    display: flex;
+}
+
+.OPL span{
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 140%;
+    /* or 20px */
+
+    letter-spacing: 0.01em;
+
+    color: #000000;
+}
+
+.OPL{
+    height: 500px;
+}
+
+.OPL span a{
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 140%;
+    /* or 20px */
+
+    letter-spacing: 0.01em;
+
+    color: #40B447;
+    text-decoration: underline;
+}
+
+.OPL h2{
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 140%;
+    /* identical to box height, or 22px */
+
+    letter-spacing: 0.01em;
+
+    color: #000000;
+    margin-top: 30px;
+}
+
+.radio__div label div{
+    width: 94px;
+height: 45px;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+  }
+  .radio {
+    position: relative;
+    cursor: pointer;
+    line-height: 20px;
+    font-size: 14px;
+    margin: 15px;
+  }
+  .radio .label {
+    position: relative;
+    display: block;
+    float: left;
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #40B447;
+    border-radius: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .radio .label:after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background: #40B447;
+    transform: scale(0);
+    transition: all 0.2s ease;
+    opacity: 0.08;
+    pointer-events: none;
+  }
+  .radio:hover .label:after {
+    transform: scale(3.6);
+  }
+  input[type="radio"]:checked + .label {
+    border-color: #40B447;
+  }
+  input[type="radio"]:checked + .label:after {
+    transform: scale(1);
+    transition: all 0.2s cubic-bezier(0.35, 0.9, 0.4, 0.9);
+    opacity: 1;
+  }
+  .cntr {
+    position: absolute;
+    top: calc(50% - 10px);
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
+  .hidden {
+    display: none;
+  }
+  .credit {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    transition: all 0.2s ease;
+    -webkit-user-select: none;
+    user-select: none;
+    opacity: 0.6;
+  }
+  .credit img {
+    width: 72px;
+  }
+  .credit:hover {
+    transform: scale(0.95);
+  }
+  
+.order .ord__inp label{
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 140%;
+    /* identical to box height, or 22px */
+
+    letter-spacing: 0.01em;
+
+    color: #000000;
+    margin-top: 20px;
+}
+
+.order .ord__inp div:first-child label{
+    margin-top: 30px;
+}
+
+.D-O-2{
+    margin-top: 80px;
+}
+
+.radio__div{
+    display: flex;
+    flex-direction: row;
+    
+
+}
+
+div.radio__div label{
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 140%;
+    /* identical to box height, or 22px */
+
+    letter-spacing: 0.01em;
+
+    color: #000000;
+    margin: 0;
+    margin-right: 14px;
+}
+
+textarea{
+    padding: 16px 24px 16px 20px;
+    width: 345px;
+    height: 100px;
+    background: #F9F9F9;
+    border-radius: 3px;
+    margin-top: 10px;
+    resize: none;
+}
+
+.OPL .g__O__O{
+    padding: 18px 56px;
+    width: 345px;
+    height: 51px;
+    background: #40B447;
+    border-radius: 3px;
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+
+
+    color: #FFFFFF;
+    margin-top: 20px;
+}
+
+.OPL .s__s__O{
+    padding: 18px 56px;
+    width: 345px;
+    height: 51px;
+    background: #E1E1E1;
+    border-radius: 3px;
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+
+    margin-top: 20px;
+    color: #7D7D7D;
+}
+
+.OPL{
+    margin-top: 80px;
+}
+
+.radio__div{
+    margin-top: 31px;
+}
+
